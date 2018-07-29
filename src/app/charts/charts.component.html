@@ -1,0 +1,106 @@
+<button class="btn btn-success" (click) = "showAllCharts()">Show all charts</button>
+
+<div class="container">
+    <div *ngIf = "[chartType] == 'Pie' || [chartType] == 'All'">
+        <ngx-charts-pie-chart
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        [legend]="showLegend"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [gradient]="gradient"
+        (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
+    </div>
+    <div *ngIf = "[chartType] == 'AdvPie' || [chartType] == 'All'">
+        <ngx-charts-advanced-pie-chart
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        [gradient]="gradient"
+        (select)="onSelect($event)">
+        </ngx-charts-advanced-pie-chart>
+    </div>
+</div>
+<hr *ngIf = "[chartType] == 'All'">
+<div class="container">
+    <div *ngIf = "[chartType] == 'PG' || [chartType] == 'All'">
+        <ngx-charts-pie-grid
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        (select)="onSelect($event)">
+        </ngx-charts-pie-grid>
+    </div>    
+    <div *ngIf = "[chartType] == 'HBar' || [chartType] == 'All'">
+        <ngx-charts-bar-horizontal
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+        </ngx-charts-bar-horizontal>
+    </div>
+</div>
+<hr *ngIf = "[chartType] == 'All'">
+<div class="container">
+    <div *ngIf = "[chartType] == 'VBar' || [chartType] == 'All'">
+        <ngx-charts-bar-vertical
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+    </div>
+    <div *ngIf = "[chartType] == 'TM' || [chartType] == 'All'">
+        <ngx-charts-tree-map
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        (select)="onSelect($event)">
+        </ngx-charts-tree-map>
+    </div>
+</div>
+<hr *ngIf = "[chartType] == 'All'">
+<div class="container">
+    <div *ngIf = "[chartType] == 'NC' || [chartType] == 'All'">
+        <ngx-charts-number-card
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        (select)="onSelect($event)">
+        </ngx-charts-number-card>
+    </div>
+    <div *ngIf = "[chartType] == 'Gauge' || [chartType] == 'All'">
+        <ngx-charts-gauge
+        [view]="view"
+        [scheme]="getDomain()"
+        [results]="jsonData"
+        [min]="0"
+        [max]="100"
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="'alerts'"
+        [bigSegments]="10"
+        [smallSegments]="5"
+        (select)="onSelect($event)">
+        </ngx-charts-gauge>
+    </div>
+</div>
