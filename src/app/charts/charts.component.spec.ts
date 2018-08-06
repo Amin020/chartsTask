@@ -1,25 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ChartsComponent } from './charts.component';
 
-describe('ChartsComponent', () => {
-  let component: ChartsComponent;
-  let fixture: ComponentFixture<ChartsComponent>;
+describe('charts', () => {
+  let charts: ChartsComponent;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ChartsComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ChartsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach( () => {
+    charts = new ChartsComponent();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Should show all charts by clicking Show all charts button!', () => {
+    charts.chartType = '';
+
+    charts.showAllCharts();
+
+    expect(charts.chartType).toBe('All');
+  });
+
+  it('Should return new color schema according to color name!', () => {
+    charts.colorScheme.domain = null;
+    charts.colorName = 'natural';
+
+    const result = charts.getDomain();
+
+    expect(result.domain).toBe(charts.colorScheme.domain);
+
   });
 });

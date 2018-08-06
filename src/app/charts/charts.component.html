@@ -10,8 +10,7 @@
         [explodeSlices]="explodeSlices"
         [labels]="showLabels"
         [doughnut]="doughnut"
-        [gradient]="gradient"
-        (select)="onSelect($event)">
+        [gradient]="gradient">
         </ngx-charts-pie-chart>
     </div>
     <div *ngIf = "[chartType] == 'AdvPie' || [chartType] == 'All'">
@@ -19,8 +18,7 @@
         [view]="view"
         [scheme]="getDomain()"
         [results]="jsonData"
-        [gradient]="gradient"
-        (select)="onSelect($event)">
+        [gradient]="gradient">
         </ngx-charts-advanced-pie-chart>
     </div>
 </div>
@@ -30,8 +28,7 @@
         <ngx-charts-pie-grid
         [view]="view"
         [scheme]="getDomain()"
-        [results]="jsonData"
-        (select)="onSelect($event)">
+        [results]="jsonData">
         </ngx-charts-pie-grid>
     </div>    
     <div *ngIf = "[chartType] == 'HBar' || [chartType] == 'All'">
@@ -46,8 +43,7 @@
         [showXAxisLabel]="showXAxisLabel"
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        (select)="onSelect($event)">
+        [yAxisLabel]="yAxisLabel">
         </ngx-charts-bar-horizontal>
     </div>
 </div>
@@ -65,16 +61,14 @@
         [showXAxisLabel]="showXAxisLabel"
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        (select)="onSelect($event)">
+        [yAxisLabel]="yAxisLabel">
         </ngx-charts-bar-vertical>
     </div>
     <div *ngIf = "[chartType] == 'TM' || [chartType] == 'All'">
         <ngx-charts-tree-map
         [view]="view"
         [scheme]="getDomain()"
-        [results]="jsonData"
-        (select)="onSelect($event)">
+        [results]="jsonData">
         </ngx-charts-tree-map>
     </div>
 </div>
@@ -84,8 +78,7 @@
         <ngx-charts-number-card
         [view]="view"
         [scheme]="getDomain()"
-        [results]="jsonData"
-        (select)="onSelect($event)">
+        [results]="jsonData">
         </ngx-charts-number-card>
     </div>
     <div *ngIf = "[chartType] == 'Gauge' || [chartType] == 'All'">
@@ -99,8 +92,7 @@
         [startAngle]="-120"
         [units]="'alerts'"
         [bigSegments]="10"
-        [smallSegments]="5"
-        (select)="onSelect($event)">
+        [smallSegments]="5">
         </ngx-charts-gauge>
     </div>
 </div>

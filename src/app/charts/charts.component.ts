@@ -47,10 +47,6 @@ export class ChartsComponent implements OnInit {
     this.chartType = 'All';
   }
 
-  onSelect(event) {
-    console.log(event);
-  }
-
   getDomain() {
     for (let i = 0; i < colorSets.length; i++) {
       if (colorSets[i].name === this.colorName) {
